@@ -1,11 +1,16 @@
 # NetFlix GPT
-# Configured Tailwind css
+    - create vite
+    - Configured Tailwind css
+    - Header
+    - Login Form
+    - Sign up Form
 
 # Features
+
 -> Login/SignUp Page
     ->Sign In / Sign up form
     redirect to the browser page
-    
+
 -> Browse
    - Header
    - Main Movie
