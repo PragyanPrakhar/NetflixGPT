@@ -2,8 +2,11 @@
     - create vite
     - Configured Tailwind css
     - Header
+    - Routing of App
     - Login Form
     - Sign up Form
+    - Form Validation
+    - Use ref hook
 
 # Features
 
