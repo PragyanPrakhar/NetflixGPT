@@ -14,6 +14,19 @@
     - Created redux Store with userSlice
     - Implemented the sign out 
     - Update Profile
+    - Unsubscribed to the onAuthStateChanged  callback.
+    - Registered for the TMDB Api, created an app and got the access token.
+    - get data from the tmdb now playing movie list api.
+    - created custom hook for nowPlayingVideo
+    - created MovieSlice
+    - update store with movie data
+    - planning for main container and secondary container
+    - fetch data for trailer video
+    - update store with trailer video data
+    - Embedded the youtube video & make it autoplay and mute
+    - Tailwind container to make main container look awesome
+
+    
 
 # Features
 
@@ -32,3 +45,5 @@
 -> NetflixGPT
    -  SearchBar
    -  Movie Suggestions
+
+

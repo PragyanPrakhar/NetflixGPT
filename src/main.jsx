@@ -28,9 +28,9 @@ export const appRouter = createBrowserRouter([
 ]);
 
 createRoot(document.getElementById("root")).render(
-    <StrictMode>
+    // <StrictMode>
         <Provider store={appStore}>
             <RouterProvider router={appRouter} />
         </Provider>
-    </StrictMode>
+    // </StrictMode>
 );

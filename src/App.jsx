@@ -1,4 +1,3 @@
-import Body from "./components/Body";
 import { Outlet, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import { onAuthStateChanged } from "firebase/auth";
@@ -9,7 +8,7 @@ function App() {
   const dispatch=useDispatch();
   const navigate=useNavigate();
     useEffect(() => {
-        onAuthStateChanged(auth, (user) => {
+        const unsubscribe=onAuthStateChanged(auth, (user) => {
             if (user) {
                 const {uid,email,displayName,photoURL} = user;
                 dispatch(addUser({uid:uid,email:email,displayName:displayName,photoURL:photoURL}));
@@ -19,6 +18,8 @@ function App() {
                 navigate("/");
             }
         });
+        //Unsubscribe when component unmounts.
+        return ()=>  unsubscribe();
     },[]);
 
     return (
