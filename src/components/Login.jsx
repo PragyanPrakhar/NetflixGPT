@@ -1,14 +1,22 @@
-import React from "react";
+import {
+    createUserWithEmailAndPassword,
+    signInWithEmailAndPassword,
+    updateProfile,
+} from "firebase/auth";
 import Header from "./Header";
 import { useState, useRef } from "react";
 import { checkValidData } from "../utils/validate";
+import { auth } from "../utils/firebase";
+import { useDispatch } from "react-redux";
+import { addUser } from "../utils/userSlice";
 
 const Login = () => {
     const [isSignInForm, setIsSignInForm] = useState(true);
     const [errorMessage, setErrorMessage] = useState(null);
     const email = useRef(null);
     const password = useRef(null);
-    const name=useRef(null);
+    const name = useRef(null);
+    const dispatch = useDispatch();
     const handleButtonClick = () => {
         //validate the form data
         let msg = "";
@@ -18,13 +26,76 @@ const Login = () => {
                 password.current.value,
                 "naam"
             );
-        }
-        else{
-          msg=checkValidData(email.current.value,
-            password.current.value,name.current.value);
+        } else {
+            msg = checkValidData(
+                email.current.value,
+                password.current.value,
+                name.current.value
+            );
         }
 
         setErrorMessage(msg);
+        if (msg) return;
+        //Sign In Sign Up Logic
+        if (!isSignInForm) {
+            //SignUp Logic
+            createUserWithEmailAndPassword(
+                auth,
+                email.current.value,
+                password.current.value
+            )
+                .then((userCredential) => {
+                    // Signed up
+                    const user = userCredential.user;
+                    updateProfile(user, {
+                        displayName: name.current.value,
+                        photoURL:
+                            "https://avatars.githubusercontent.com/u/92442393?v=4",
+                    })
+                        .then(() => {
+                            // Profile updated!
+                            // ...
+                            const { uid, email, displayName, photoURL } = auth.currentUser;
+                            dispatch(
+                                addUser({
+                                    uid: uid,
+                                    email: email,
+                                    displayName: displayName,
+                                    photoURL: photoURL,
+                                })
+                            );
+                        })
+                        .catch((error) => {
+                            setErrorMessage(error.message);
+                        });
+                    console.log(user);
+                    // ...
+                })
+                .catch((error) => {
+                    const errorCode = error.code;
+                    const errorMessage = error.message;
+                    setErrorMessage(errorCode + "-" + errorMessage);
+                    // ..
+                });
+        } else {
+            //SignIn Logic
+            signInWithEmailAndPassword(
+                auth,
+                email.current.value,
+                password.current.value
+            )
+                .then((userCredential) => {
+                    // Signed in
+                    const user = userCredential.user;
+                    console.log(user);
+                    // ...
+                })
+                .catch((error) => {
+                    const errorCode = error.code;
+                    const errorMessage = error.message;
+                    setErrorMessage(errorCode + "-" + errorMessage);
+                });
+        }
     };
     const toggleSignInForm = () => {
         setIsSignInForm(!isSignInForm);
@@ -87,3 +158,5 @@ const Login = () => {
 };
 
 export default Login;
+
+//1 hr 56 mins completed
