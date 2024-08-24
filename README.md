@@ -26,6 +26,11 @@
     - Embedded the youtube video & make it autoplay and mute
     - Tailwind container to make main container look awesome
     -Build Secondary Component 
+    -Build Movie List
+    - Build MOvie Card
+    - Found Image CDN URL
+    - made the browse page amazing
+    - usePopularMoviesCustom hook and all the corresponding custom hooks.
 
     
 
