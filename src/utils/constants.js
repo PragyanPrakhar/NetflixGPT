@@ -18,3 +18,8 @@ export const SUPPORTED_LANGUAGES = [
     { identifier: "hindi", name: "Hindi" },
     { identifier: "spanish", name: "Spanish" },
 ];
+
+export const GEMINI_KEY = "AIzaSyBJdr0K54KCWrJjVCaHclHGD_Myz-agEGw";
+
+export const PROMPT =
+    "suggest me five movies name for #hollywoodaction movie in array of json ,no any other response , only array of json";

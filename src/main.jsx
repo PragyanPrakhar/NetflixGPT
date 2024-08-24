@@ -9,6 +9,7 @@ import App from "./App.jsx";
 import Login from "./components/Login.jsx";
 import "./index.css";
 import Browse from "./components/Browse.jsx";
+import MovieDetails from "./components/MovieDetails.jsx";
 
 export const appRouter = createBrowserRouter([
     {
@@ -23,6 +24,10 @@ export const appRouter = createBrowserRouter([
                 path: "/browse",
                 element: <Browse />,
             },
+            {
+                path:"/movie/:id",
+                element:<MovieDetails/>
+            }
         ],
     },
 ]);
