@@ -10,4 +10,11 @@ export const API_OPTIONS = {
             "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4OWI3MjM0NjVjZGVmNTNkMWQzNWU0NjUzZTZjNjQyYyIsIm5iZiI6MTcyNDQwMDA0Ni4xNjE5OTQsInN1YiI6IjY2YzgzZjZiMjA1NzY2YTI4MmVhOTQxMyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.BkvqJgz1P46tkSO9mWW7pbz9G9Peiy64DSOBh52hKUw",
     },
 };
-export const IMG_CDN_URL="https://image.tmdb.org/t/p/w500"; 
+export const IMG_CDN_URL = "https://image.tmdb.org/t/p/w500";
+export const BG_URL =
+    "https://assets.nflxext.com/ffe/siteui/vlv3/fc164b4b-f085-44ee-bb7f-ec7df8539eff/d23a1608-7d90-4da1-93d6-bae2fe60a69b/IN-en-20230814-popsignuptwoweeks-perspective_alpha_website_large.jpg";
+export const SUPPORTED_LANGUAGES = [
+    { identifier: "en", name: "English" },
+    { identifier: "hindi", name: "Hindi" },
+    { identifier: "spanish", name: "Spanish" },
+];

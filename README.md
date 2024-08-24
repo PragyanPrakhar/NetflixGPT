@@ -14,7 +14,7 @@
     - Created redux Store with userSlice
     - Implemented the sign out 
     - Update Profile
-    - Unsubscribed to the onAuthStateChanged  callback.
+    - Unsubscribed to the onAuthStateChanged        callback.
     - Registered for the TMDB Api, created an app and got the access token.
     - get data from the tmdb now playing movie list api.
     - created custom hook for nowPlayingVideo
@@ -25,12 +25,16 @@
     - update store with trailer video data
     - Embedded the youtube video & make it autoplay and mute
     - Tailwind container to make main container look awesome
-    -Build Secondary Component 
-    -Build Movie List
+    - Build Secondary Component 
+    - Build Movie List
     - Build MOvie Card
     - Found Image CDN URL
     - made the browse page amazing
     - usePopularMoviesCustom hook and all the corresponding custom hooks.
+    - GPT Search Page
+    - GPT Search Bar
+    - Multilingual Support
+    
 
     
 
