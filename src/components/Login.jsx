@@ -51,7 +51,7 @@ const Login = () => {
                     const user = userCredential.user;
                     updateProfile(user, {
                         displayName: name.current.value,
-                        photoURL:  USER_AVATAR ,
+                        photoURL: USER_AVATAR,
                     })
                         .then(() => {
                             // Profile updated!
@@ -65,7 +65,6 @@ const Login = () => {
                                     photoURL: photoURL,
                                 })
                             );
-                            
                         })
                         .catch((error) => {
                             setErrorMessage(error.message);
@@ -105,11 +104,8 @@ const Login = () => {
     return (
         <div>
             <Header />
-            <div className="absolute">
-                <img
-                    src={BG_URL}
-                    alt="image"
-                />
+            <div className="absolute bg-black  ">
+                <img src={BG_URL} alt="image" />
             </div>
             <form
                 onSubmit={(e) => e.preventDefault()}

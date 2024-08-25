@@ -22,4 +22,4 @@ export const SUPPORTED_LANGUAGES = [
 export const GEMINI_KEY = "AIzaSyBJdr0K54KCWrJjVCaHclHGD_Myz-agEGw";
 
 export const PROMPT =
-    "suggest me five movies name for #hollywoodaction movie in array of json ,no any other response , only array of json";
+    "suggest me five movies name for #hollywoodaction movie in array of json and it should contain both hollywood and bollywood ,no any other response , only array of json";
