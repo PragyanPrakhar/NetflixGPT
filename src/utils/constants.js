@@ -7,7 +7,7 @@ export const API_OPTIONS = {
     headers: {
         accept: "application/json",
         Authorization:
-            "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4OWI3MjM0NjVjZGVmNTNkMWQzNWU0NjUzZTZjNjQyYyIsIm5iZiI6MTcyNDQwMDA0Ni4xNjE5OTQsInN1YiI6IjY2YzgzZjZiMjA1NzY2YTI4MmVhOTQxMyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.BkvqJgz1P46tkSO9mWW7pbz9G9Peiy64DSOBh52hKUw",
+            "Bearer"+import.meta.env.REACT_APP_TMDB_KEY,
     },
 };
 export const IMG_CDN_URL = "https://image.tmdb.org/t/p/w500";
@@ -19,7 +19,7 @@ export const SUPPORTED_LANGUAGES = [
     { identifier: "spanish", name: "Spanish" },
 ];
 
-export const GEMINI_KEY = "AIzaSyBJdr0K54KCWrJjVCaHclHGD_Myz-agEGw";
+export const GEMINI_KEY =import.meta.env.REACT_APP_GEMINI_KEY;
 
 export const PROMPT =
     "suggest me five movies name for #hollywoodaction movie in array of json and it should contain both hollywood and bollywood ,no any other response , only array of json";
