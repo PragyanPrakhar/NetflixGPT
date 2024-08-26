@@ -22,7 +22,7 @@ import { GoogleGenerativeAI } from "@google/generative-ai";
  * $ npm install @google/generative-ai
  */
 
-const apiKey = GEMINI_KEY;
+const apiKey = "AIzaSyBJdr0K54KCWrJjVCaHclHGD_Myz-agEGw";
 const genAI = new GoogleGenerativeAI(apiKey);
 
 const model = genAI.getGenerativeModel({

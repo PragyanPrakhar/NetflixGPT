@@ -31,7 +31,7 @@ const Header = () => {
         dispatch(changeLanguage(e.target.value));
     };
     return (
-        <div className="absolute z-50 px-2 py-2 bg-gradient-to-b from-black  w-screen flex justify-between">
+        <div className="absolute z-50 px-2 py-2 bg-gradient-to-b from-black flex  w-screen  justify-between ">
             <img className="top-10  w-44 z-0" src={LOGO} alt="Logo" />
             {user && (
                 <div className="flex p-2">
