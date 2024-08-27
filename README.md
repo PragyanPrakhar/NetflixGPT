@@ -57,4 +57,5 @@
    -  Movie Suggestions
 
 
-Completedd till 1 hr 44 minutes.
+Left->  SingleMovieCard improvement
+        Homepage click while being on the searchMovieCard

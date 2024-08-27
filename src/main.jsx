@@ -10,6 +10,7 @@ import Login from "./components/Login.jsx";
 import "./index.css";
 import Browse from "./components/Browse.jsx";
 import MovieDetails from "./components/MovieDetails.jsx";
+import SearchedMovies from "./components/SearchedMovies.jsx";
 
 export const appRouter = createBrowserRouter([
     {
@@ -27,6 +28,10 @@ export const appRouter = createBrowserRouter([
             {
                 path:"/movie/:id",
                 element:<MovieDetails/>
+            },
+            {
+                path:"/searchedMovies",
+                element:<SearchedMovies/>
             }
         ],
     },

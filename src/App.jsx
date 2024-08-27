@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "./utils/firebase";
 import { useDispatch } from "react-redux";
+import { Toaster } from 'react-hot-toast';
 import { addUser,removeUser } from "./utils/userSlice";
 function App() {
   const dispatch=useDispatch();
@@ -25,6 +26,7 @@ function App() {
     return (
         <div>
             <Outlet />
+            <Toaster />
         </div>
     );
 }
