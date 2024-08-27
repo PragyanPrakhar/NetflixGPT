@@ -1,4 +1,4 @@
-import { Outlet, useNavigate } from "react-router-dom";
+import { Outlet, useNavigate,useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "./utils/firebase";
@@ -8,9 +8,10 @@ import { addUser,removeUser } from "./utils/userSlice";
 function App() {
   const dispatch=useDispatch();
   const navigate=useNavigate();
+  const location=useLocation();
     useEffect(() => {
         const unsubscribe=onAuthStateChanged(auth, (user) => {
-            if (user) {
+            if (user && !location.contains("movie")) {
                 const {uid,email,displayName,photoURL} = user;
                 dispatch(addUser({uid:uid,email:email,displayName:displayName,photoURL:photoURL}));
                 navigate("/browse");
