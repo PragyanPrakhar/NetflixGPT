@@ -1,29 +1,35 @@
-import { Outlet, useNavigate,useLocation } from "react-router-dom";
+import { Outlet, useNavigate, useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "./utils/firebase";
 import { useDispatch } from "react-redux";
 import { Toaster } from 'react-hot-toast';
-import { addUser,removeUser } from "./utils/userSlice";
+import { addUser, removeUser } from "./utils/userSlice";
+
 function App() {
-  const dispatch=useDispatch();
-  const navigate=useNavigate();
-  const location=useLocation();
-//   console.log("Loca")
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+    const location = useLocation();
+
     useEffect(() => {
-        const unsubscribe=onAuthStateChanged(auth, (user) => {
-            if (user && (location!==null && !location.pathname.includes("movie"))) {
-                const {uid,email,displayName,photoURL} = user;
-                dispatch(addUser({uid:uid,email:email,displayName:displayName,photoURL:photoURL}));
-                navigate("/browse");
+        const unsubscribe = onAuthStateChanged(auth, (user) => {
+            if (user) {
+                const { uid, email, displayName, photoURL } = user;
+                dispatch(addUser({ uid, email, displayName, photoURL }));
+
+                // Check if the user is on the home page or login page
+                if (location.pathname === "/" || location.pathname === "/login") {
+                    navigate("/browse");
+                }
             } else {
                 dispatch(removeUser());
                 navigate("/");
             }
         });
-        //Unsubscribe when component unmounts.
-        return ()=>  unsubscribe();
-    },[]);
+
+        // Unsubscribe when component unmounts.
+        return () => unsubscribe();
+    }, [dispatch, navigate, location]);
 
     return (
         <div>
@@ -34,5 +40,3 @@ function App() {
 }
 
 export default App;
-
-//Completed till 3 hr 20 minutes
