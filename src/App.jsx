@@ -9,9 +9,10 @@ function App() {
   const dispatch=useDispatch();
   const navigate=useNavigate();
   const location=useLocation();
+//   console.log("Loca")
     useEffect(() => {
         const unsubscribe=onAuthStateChanged(auth, (user) => {
-            if (user && !location.contains("movie")) {
+            if (user && (location!==null && !location.pathname.includes("movie"))) {
                 const {uid,email,displayName,photoURL} = user;
                 dispatch(addUser({uid:uid,email:email,displayName:displayName,photoURL:photoURL}));
                 navigate("/browse");
