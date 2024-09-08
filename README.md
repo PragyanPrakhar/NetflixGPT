@@ -50,7 +50,7 @@ MovieMind is an immersive and dynamic movie exploration platform with a Netflix-
 ## 🎨 **UI Preview**
 
 <p align="center">
-   <img src="https://drive.google.com/file/d/1Co-OElK6WyMMecjYYboDHiBADGv5Rav1/view?usp=sharing" alt="MovieMind UI Preview" width="70%">
+   <img src="preview.jpg" alt="MovieMind UI Preview" width="70%">
 </p>
 
 ## 🔧 **Setup and Installation**
