@@ -50,7 +50,7 @@ MovieMind is an immersive and dynamic movie exploration platform with a Netflix-
 ## 🎨 **UI Preview**
 
 <p align="center">
-   Link : https://movie-mind-iota.vercel.app/
+   <img src="https://drive.google.com/file/d/1Co-OElK6WyMMecjYYboDHiBADGv5Rav1/view?usp=sharing" alt="MovieMind UI Preview" width="70%">
 </p>
 
 ## 🔧 **Setup and Installation**
@@ -60,4 +60,23 @@ MovieMind is an immersive and dynamic movie exploration platform with a Netflix-
    ```bash
    git clone https://github.com/PragyanPrakhar/MovieMind.git
    cd MovieMind
+
+2. **Install dependencies:**
+    ```bash
+    npm install
+
+3. **Set up environment variables:**
+-  Create a .env file at the root of your project and add your Firebase and TMDb API keys:
+
+    ```bash
+    REACT_APP_FIREBASE_API_KEY=your_firebase_api_key
+    REACT_APP_TMDB_API_KEY=your_tmdb_api_key
+
+4. **Run the application:**
+   ```bash
+    npm run dev
+
+## **🎥 Demo
+Check out the live demo of MovieMind at: https://movie-mind-iota.vercel.app/
+
 
